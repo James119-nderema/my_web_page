@@ -9,11 +9,23 @@
 <body>
 
     <main>
-        <header>This is my biography</header>
+        <nav class = "nav_bar">
+            <a href="#home" id="Home">
+                <p >Home</p>
+            </a>
+            <a href="#about_me" id="About_me">
+                <p >About me</p>
+            </a>
+            <a href="#my_schedule" id="My_schedule">
+                <p>My schedule</p>
+            </a>
+            
+        </nav>
+        <header id="home">This is my biography</header>
         <p>About Me</p>
         <img src="download.jpeg" alt="About me">
 
-        <section>
+        <section id="about_me">
             <p>My name is James Nderema. I live in Mombasa</p>
             <p>I am a Cumputer Science graduate</p>
             <p>I schooled at Technical University of Mombasa</p>
@@ -43,52 +55,54 @@
 
             <p>This is my Weekly schedule</p>
 
-            <table style="border: 1px solid black; margin: 5px">
+            <table style="border: 1px solid black; margin: 5px" id="my_schedule">
                 <thead>
-                    <tr>
+                    <tr id ="t_head">
                         <th>Days/Time</th>
                         <th>Morning</th>
                         <th>Afternoon</th>
                         <th>Evening</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr name ="t_head">
+                <tbody class ="t_body">
+                    <tr >
                         <td>Monday</td>
                         <td>Go Gym</td>
                         <td>Studied</td>
                         <td>Played Football</td>
                     </tr>
-                    <tr name = "t_data">
+                    <tr class = "t_data">
                         <td>Tuesday</td>
                         <td>Mornig run</td>
                         <td>Walk tour</td>
                         <td>Attended an event</td>
                     </tr>
-                    <tr name = "t_data">
+                    <tr class = "t_data">
                         <td>Wednessday</td>
                         <td>Ridding bike</td>
                         <td>Attended classes</td>
                         <td>Watched a movie</td>
                     </tr>
-                    <tr name = "t_data">
+                    <tr class = "t_data">
                         <td>Thursday</td>
                         <td>Morning run</td>
                         <td>Nature walk</td>
                         <td>Went Skatting</td>
                     </tr>
-                    <tr name = "t_data">
+                    <tr class = "t_data">
                         <td>Friday</td>
                         <td>Did a CAT</td>
                         <td>Played Music</td>
                         <td>Went for a party</td>
                     </tr>
-                    <tr name = "t_data">
+                    <tr class = "t_data">
                         <td>Saturday</td>
-                        <td colspan="2">This is my rest day</td>
+                        <td colspan="3">This is my rest day</td>
                     </tr>
                 </tbody>
             </table>
+
+            <video src="jingle_bells.mp4" controls>This is my favorite song</video>
 
         </section>
 
