@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Item</title>
+    <style>
+        #form_header{
+            font-size: 5vh;
+            gap: 20vw;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            
+        }
+
+        #t_body{
+
+            font-size: 3vh;
+            gap: 20vw;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-left: 13.2vw;
+            
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Adding Content to the table</h1>
+<div id="fill_details">
+    <legend>Add Item</legend>
+    <label for="fullname">Full Name:</label>
+    <input type="text" name="fullname" id="full_name" placeholder="James Nderema">
+
+    <label for="age">Age:</label>
+    <input type="number" name="age" id="age" placeholder="20">
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" placeholder="james.nderema@schoolmaster.co.ke">
+
+    <button onclick="addItem()">Add Item</button>
+    <br>
+    <hr>
+</div>
+<div>
+    <div id="form_header">
+        <span>
+            Full Name
+        </span>
+        <span>
+            Age
+        </span>
+        <span>
+            Email
+        </span>
+    </div>
+
+    <div id="t_body">
+
+            <ol id="full_names">
+                
+            </ol>
+        
+        <div id="ages">
+            
+        </div>
+
+        <div id="emails">
+            
+        </div>
+        
+
+    </div>
+    
+</div>
+
+<script>
+    function addItem(){
+        const fullName = document.getElementById("full_name").value;
+        const age = document.getElementById("age").value;
+        const email = document.getElementById("email").value;
+
+        const full_Name = document.createElement("li");
+        const Age = document.createElement("p");
+        const Email = document.createElement("p");
+        
+        full_Name.textContent = fullName;
+        Age.textContent = age;
+        Email.textContent = email;
+
+        full_names.appendChild(full_Name);
+        ages.appendChild(Age);
+        emails.appendChild(Email);
+
+
+    }
+</script>
+</body>
+</html>

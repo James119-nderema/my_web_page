@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Me</title>
+</head>
+<body>
+    <h1>Change the content</h1>
+    <p id="content">This is the original conent</p>
+    <button type="button" onclick="changeContent()">Change Content </button>
+
+    <script>
+        function changeContent() {
+            const para = document.getElementById("content");
+            para.textContent = "This is the changed content"
+            para.style.color = "red";
+            para.style.backgroundColor = "yellow";
+            para.style.fontSize = "30px"
+        }
+    </script>
+</body>
+</html>

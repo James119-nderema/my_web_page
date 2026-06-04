@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/submit" method="POST" enctype="multipart/form-data">
+
+
+  <fieldset>
+    <legend>Personal Information</legend>
+
+
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullname"
+           placeholder="John Doe" required minlength="2" maxlength="50">
+
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email"
+           placeholder="john@example.com" required>
+
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" min="1900-01-01">
+
+
+    <label for="bio">Biography:</label>
+    <textarea id="bio" name="bio" rows="5" cols="40"
+              placeholder="Tell us about yourself..."></textarea>
+  </fieldset>
+
+
+  <fieldset>
+    <legend>Preferences</legend>
+
+
+    <label for="country">Country:</label>
+    <select id="country" name="country">
+      <optgroup label="Africa">
+        <option value="ke">Kenya</option>
+        <option value="ng">Nigeria</option>
+      </optgroup>
+      <optgroup label="Europe">
+        <option value="gb">United Kingdom</option>
+      </optgroup>
+    </select>
+
+
+    <p>Skill Level:</p>
+    <input type="radio" id="beginner" name="level" value="beginner">
+    <label for="beginner">Beginner</label>
+    <input type="radio" id="expert" name="level" value="expert">
+    <label for="expert">Expert</label>
+
+
+    <input type="checkbox" id="terms" name="terms" required>
+    <label for="terms">I agree to the Terms of Service</label>
+  </fieldset>
+
+
+  <input type="hidden" name="token" value="abc123">
+  <input type="file" name="avatar" accept="image/*">
+  <button type="submit">Submit Form</button>
+  <button type="reset">Clear Form</button>
+</form>
+
+</body>
+</html>

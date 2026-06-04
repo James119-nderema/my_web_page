@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert</title>
+</head>
+<body>
+
+    <h1>Fruits</h1>
+
+    <ul id="fruits">
+
+    </ul>
+
+    <Div>
+        <h2>Adding conent Using Input</h2>
+
+        <label for="fruit">Fruit:</label>
+        <input type="text" id="fruit">
+        <button onclick="addFruit() " >Add Fruit</button>
+    </Div>
+
+    <script>
+
+        function addFruit() {
+
+            const getFruit = document.getElementById("fruit").value;
+            const displayFruits =document.createElement("li");
+            displayFruits.textContent = getFruit;
+            document.getElementById("fruits").appendChild(displayFruits);
+
+        }
+
+
+
+    </script>
+    
+</body>
+</html>

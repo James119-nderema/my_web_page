@@ -1,0 +1,62 @@
+<!<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="content/content_pages.css" />
+  <title>Dashboard</title>
+  <link rel="icon" type="image/jpeg" href="public/school.jpeg">
+ </head>
+<body>
+
+ <div class="container">
+
+    <nav>
+    <img src="public/school.jpeg" alt="school Image" class="image_school">
+    <br>
+    <a onclick="loadPage('content/dashboard.html', this)">Dashboard</a>
+    <a onclick="loadPage('content/students.html', this)">Students</a>
+    <a onclick="loadPage('content/teachers.html', this)">Teachers</a>
+    <a onclick="loadPage('content/input_marks.html', this)" class="register">
+        Input Marks
+    </a>
+    <a onclick="loadPage('content/view_results.html', this)" class="login">
+        View Results
+    </a>
+    
+  </nav>
+
+  
+
+  <!-- Content from separate files loads here -->
+  <div id="content">Loading...</div>
+ </div>
+  
+
+  <script>
+    function loadPage(url, clickedLink) {
+      // Update active state on navbar
+      document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+      clickedLink.classList.add('active');
+
+      // Fetch the file and inject its content
+      fetch(url)
+        .then(response => {
+          if (!response.ok) throw new Error('Page not found');
+          return response.text();
+        })
+        .then(html => {
+          document.getElementById('content').innerHTML = html;
+        })
+        .catch(err => {
+          document.getElementById('content').innerHTML = '<p>Error loading page.</p>';
+          console.error(err);
+        });
+    }
+
+    // Load home page by default on startup
+    loadPage('content/dashboard.html', document.querySelector('nav a'));
+  </script>
+
+</body>
+</html>

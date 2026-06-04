@@ -1,0 +1,118 @@
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body { font-family: Verdana, Geneva, Tahoma, sans-serif; }
+
+    nav {
+      background: linear-gradient(to right,rgb(39, 5, 161),rgb(82, 193, 245));
+      display: flex;
+      gap: 50px;
+      
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    nav a:hover, nav a.active {
+      background-color: rgb(4, 4, 104);
+    }
+
+    #content {
+      padding: 40px;
+    }
+
+    .image_school{
+        height: 40px;
+        border-radius: 50%;
+        padding-left: 30px;
+        padding-right: 35%
+
+    
+
+    }
+
+    #mainpage{
+        background: linear-gradient(circle, rgb(196, 186, 186), white);
+    }
+
+.regiter{
+    gap: 10px;
+    padding-right: 10px;
+
+} 
+
+.login{
+    gap: 10px;
+}
+
+.register_form{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 30px;
+    width: 40vw;
+    margin-top: 15vh;
+    margin-left: 25vw;
+    background-color: rgb(238, 243, 241);
+    line-height: 30px;
+    column-gap: 20px;
+    align-content: center;
+    justify-content: center;
+    
+}
+
+.login_form{
+    
+}
+
+legend{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: blue;
+}
+
+input{
+    border: 2px solid rgb(3, 1, 15);
+    border-radius: 5px;
+    height: 2rem;
+
+}
+
+input:active{
+    border: 1px solid blue;
+
+}
+
+label{
+    font-weight: bold;
+    
+}
+
+button{
+
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 15vw;
+    cursor: pointer;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    margin-left: 30%;
+
+}
+
+button:hover{
+    font-size: 25px;
+    background-color: rgb(4, 4, 51);
+}

@@ -17,6 +17,8 @@
     border: 2px solid black;
     border-radius: 5px;
     display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
     font-size: 40px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;

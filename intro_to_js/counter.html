@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    <h1>Counter</h1>
+    <p>The counter increseases/reduces by 1 when button clicked</p>
+    <p style="font-size: 30px;">Count: <span id="count" style="font-size: 30px;">0</span></p>
+    <div>
+        <button onclick = "increase()">Increase</button>
+        <button onclick = "decrease()">Decrease</button>
+        <button onclick = "reset()">Reset</button>
+    </div>
+
+    <script>
+        let count = 0;
+        function increase(){
+            count++;
+            const counter = document.getElementById("count");
+            counter.textContent = count;
+            counter.style.color = "green";
+        }
+
+        function decrease(){
+            count--;
+            const counterDecrease = document.getElementById("count");
+            counterDecrease.textContent = count;
+            counterDecrease.style.color = "red";
+
+        }
+
+        function reset(){
+           count = 0;
+            const counterReset = document.getElemtById("count");
+            counterReset.textContent = count;
+            counterReset.style.color = "yellow";
+            counterReset.style.backgroundColor = "black";
+        }
+
+    </script>
+</body>
+</html>
