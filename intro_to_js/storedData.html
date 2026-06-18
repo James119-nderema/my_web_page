@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stored Data</title>
+</head>
+<body>
+
+    <h1>Stored Data</h1>
+
+    <label for="name">Name:</label>
+    <input type="text" placeholder="Input name" id="input_name">
+    <button onclick="savedItem()">Save</button>
+
+    <p id="saved_item"></p>
+    
+
+<script>
+    window.addEventListener("load", () => {
+        const savedItem = localStorage.getItem("user_name");
+
+        if (savedItem){
+            document.getElementById("saved_item").textContent =savedItem;
+
+        }
+
+    })
+
+    function savedItem(){
+        const name = document.getElementById("input_name").value;
+        localStorage.setItem("user_name", name)
+        document.getElementById("saved_item").textContent = name;
+    }
+
+</script>
+
+</body>
+</html>

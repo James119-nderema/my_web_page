@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array in Objects</title>
+</head>
+<body>
+    <h1>Array in Objects</h1>
+
+    <label for="name">Name:</label>
+    <input type="text" placeholder="James" id="name">
+    <label for="age">Age:</label>
+    <input type="number" min="15" name="age" id="age">
+    <label for="grade">Grade:</label>
+    <input type="text" id="grade" placeholder="A+">
+    <button onclick="addDetails()">Add Details</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Name:</th>
+                <th>Age:</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody id="table_body">
+
+        </tbody>
+    </table>
+
+    <script>
+        const details = [];
+        let numIndex =1;
+
+        function addDetails(){
+            const name = document.getElementById("name").value.trim();
+            const age = document.getElementById("age").value.trim();
+            const grade = document.getElementById("grade").value.trim();
+
+            const detailsObject = {
+                id : numIndex++,
+                name : name,
+                age : Number(age),
+                grade: grade
+            };
+            details.push(detailsObject);
+
+            document.getElementById("name").value = "";
+            document.getElementById("age").value = "";
+            document.getElementById("grade").value = "";
+
+            displaydetails();
+          
+        }
+        function  displaydetails(){
+                const table_body = document.getElementById("table_body");
+                table_body.innerHTML = "";
+
+                details.forEach(
+                    s => {
+                        const row = document.createElement("tr");
+                        row.innerHTML = `
+                        ${s.id}${s.name} ${s.age} ${s.grade}
+                        `;
+
+                        table_body.appendChild(row);
+                    }
+                );
+            }
+    </script>
+</body>
+</html>

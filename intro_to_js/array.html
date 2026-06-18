@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Using array to store data</h1>
+
+    <label for="fruit">Input fruit Name:</label>
+    <input type="text" placeholder="Mango" id="fruit">
+    <button onclick="renderFruit()">Add Fruit</button>
+
+    <div id="displayFruits" >
+
+    </div>
+
+    <script>
+        const relodFruitDisplay = JSON.parse(localStorage.getItem("storedFruits"));
+
+        const fruits = relodFruitDisplay;
+
+        
+        window.addEventListener("load",()=>{
+            
+            if (fruits){
+
+            const displaySavedFruits = doccument.getElementById("displayFruits")
+          
+            fruits.forEach( f => {
+                const list = document.createElement("li");
+                list.textContent = f;
+                displaySavedFruits.appendChild(list);
+            });
+        }
+        })
+        
+
+
+        function renderFruit(){
+            const fruit = document.getElementById("fruit").value.trim();
+
+            if (!fruit){
+                alert("Please input Fruit name");
+                return;       
+            }
+
+            fruits.push(fruit);
+
+            localStorage.setItem("storedFruits", JSON.stringify(fruits));
+
+            document.getElementById("fruit").value = "";
+
+            displayFruits();
+
+        }
+
+        function displayFruits(){
+
+            const displayStoredFruits = JSON.parse(localStorage.getItem("storedFruits"));
+
+            const display = document.getElementById("displayFruits");
+            display.textContent = "";
+
+            displayStoredFruits.forEach( f => {
+                const list = document.createElement("li");
+                list.textContent = f;
+                display.appendChild(list);
+            })
+
+        }
+    </script>
+</body>
+</html>

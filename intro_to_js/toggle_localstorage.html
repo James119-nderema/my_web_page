@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Toggle</title>
+    <style>
+        body{
+            background: #ffffff;
+            color: #1d1b1b;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body.darkTheme{
+            background: #1d1b1b;
+            color: #ffffff;
+        }
+
+        #darkMode{
+            background: blue;
+            color: #ffffff;
+            font-size: 20px;
+            border-radius: 5px;
+            
+        }
+
+        #darkMode:hover{
+            cursor: pointer;
+            background: #040463;
+        }
+    </style>
+</head>
+<body>
+    <h1>Saved Toggle</h1>
+
+    <p>This page can turn to dark mode or light mode</p>
+
+    <button id="darkMode" onclick = "changeMode()">Change dark mode</button>
+
+<script>
+    const btn = document.getElementById("darkMode");
+    if (localStorage.getItem("theme") === 'darkTheme'){
+        document.body.classList.add("darkTheme");
+        btn.textContent = "Change to light mode";
+    }
+
+    function changeMode(){
+        const darkMode = document.body.classList.toggle("darkTheme");
+        localStorage.setItem("theme",darkMode ? "darkTheme" : "lightTheme");
+        btn.textContent = darkMode ? "Change to light mode" : "Change dark mode";
+    }
+</script>
+    
+</body>
+</html>
